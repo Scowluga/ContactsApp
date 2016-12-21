@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.scowluga.contacts.DetailActivity"
+    android:orientation="vertical"
+    style="@style/NoAction">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@color/colorAccent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right|end">
+
+                <Button
+                    android:id="@+id/detail_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:drawableLeft="@drawable/edit_drawable"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+                <Button
+                    android:id="@+id/detail_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:drawableLeft="@drawable/delete_drawable"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+            </LinearLayout>
+            <!--Based on stackoverflow response-->
+            <!--http://stackoverflow.com/questions/22105775/imageview-in-circular-through-xml-->
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:elevation="12dp"
+                android:layout_margin="5dp"
+                android:id="@+id/view2"
+                app:cardCornerRadius="80dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:thicknessRatio="1.9"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="@color/white">
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/detail_profile"
+                    android:layout_gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitCenter">
+                </ImageView>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/detail_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:layout_margin="10dp"
+                android:textSize="30sp"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <Button
+        android:id="@+id/detail_email"
+        android:layout_gravity="right|end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/email_drawable"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+    <Button
+        android:id="@+id/detail_phone"
+        android:layout_gravity="right|end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Phone Number"
+        android:drawableLeft="@drawable/phone_drawable"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+</LinearLayout>
